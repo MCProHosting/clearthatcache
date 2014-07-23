@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How do I clear my cache?</title>
+    <style>
+        body {
+            background: #eee;
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+        }
+        h1 {
+            background: #333;
+            color: #fff;
+            font-weight: normal;
+            max-width: 600px;
+            margin: 100px auto 0;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 4em;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        small {
+            display: block;
+            font-size: 0.4em;
+            color: #999;
+        }
+
+        a {
+            position: fixed;
+            bottom: 10px;
+            font-size: 0.8em;
+            color: #aaa;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1><small>To Clear Your Cache</small> <span id="instructions"></span></h1>
+    <a href="https://www.youtube.com/watch?v=WQNS9MI1LOc">This message brought to you by TJBroHosting</a>
+    <script src="bowser.js"></script>
+    <script>
+        function getText() {
+            if (bowser.android) {
+                return '<a href="http://www.wikihow.com/Clear-Your-Browser\'s-Cache-on-an-Android">Click here</a> to learn how to clear your cache.'
+            }
+            if (bowser.ios) {
+                return 'From the Home screen, click Settings, then Safari. At the bottom, tap "Clear Cookies and Data".'
+            }
+            if (bowser.safari) {
+                return 'Hold <code>Shift</code> and press the "Refresh" button at the same time.'
+            }
+
+            return 'Press <code>Control</code> and <code>F5</code> at the same time.';
+        }
+
+        document.getElementById('instructions').innerHTML = getText();
+    </script>
+</body>
+</html>
